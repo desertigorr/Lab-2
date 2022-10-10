@@ -17,5 +17,3 @@ print(f' \x1b[31m\x1b[1mLithuania flag\t{END}')
 
 
 
-
-

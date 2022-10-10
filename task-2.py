@@ -1,5 +1,4 @@
 # Task 2 - Endless pattern
-import time
 
 # Создание констант
 BLACK = '\u001b[40m'
@@ -27,7 +26,7 @@ def draw_pattern(array):
 
 
 # Окрашивание узора
-def draw_plot(array_pl):
+def draw_plot(array_pl, times):
     for i in range(5):
         line = ''
         for j in range(11):
@@ -38,7 +37,7 @@ def draw_plot(array_pl):
             if array_pl[i][j] == 1:
                 line += BLACK + '  ' + WHITE
         line += END
-        print(line)
+        print(line * times)
 
 
 # Вывод узора на экран
@@ -46,14 +45,8 @@ def create_pattern(times):
     if not times.isdigit():
         print('Необходимо ввести целое число')
         start()
-    elif times == '-1':
-        while True:
-            draw_plot(plot)
-            time.sleep(0.2)
     elif times.isdigit():
-        for i in range(int(times)):
-            draw_plot(plot)
-            time.sleep(0.5)
+        draw_plot(plot, int(times))
 
 
 # Запуск программы
@@ -63,6 +56,6 @@ def start():
 
 
 draw_pattern(plot)
-draw_plot(plot)
+draw_plot(plot, 1)
 
 start()
