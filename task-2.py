@@ -51,7 +51,7 @@ def create_pattern(times):
 
 # Запуск программы
 def start():
-    user_input = input('Введите количество повторений узора \n(-1 для бесконечного, потребуется убить процесс для завершения!): ')
+    user_input = input('Введите количество повторений узора: ')
     create_pattern(user_input)
 
 
